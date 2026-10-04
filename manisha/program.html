@@ -1,0 +1,1699 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MANISHA FITNESS HUB</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #080808;
+            color: #fff;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(0, 0, 0, 0.90);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        nav {
+            max-width: 1200px;
+            height: 75px;
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #e50914;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #e50914;
+        }
+
+        .join-btn {
+            background: #e50914;
+            padding: 11px 20px;
+            border-radius: 5px;
+            color: #fff !important;
+        }
+
+        .join-btn:hover {
+            background: #ff202a;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .program-hero {
+            min-height: 70vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.78),
+                    rgba(0,0,0,0.90)
+                ),
+                url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            padding: 20px;
+        }
+
+        .hero-content .small-title {
+            color: #e50914;
+            font-weight: 600;
+            letter-spacing: 4px;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(70px, 10vw, 120px);
+            line-height: 0.9;
+            letter-spacing: 3px;
+        }
+
+        .hero-content h1 span {
+            color: #e50914;
+        }
+
+        .hero-content p {
+            color: #bbb;
+            max-width: 700px;
+            margin: 25px auto 0;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+
+        /* ================= COMMON ================= */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 55px;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 span {
+            color: #e50914;
+        }
+
+        .section-title p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+
+        /* ================= PROGRAMS ================= */
+
+        .programs {
+            background: #080808;
+        }
+
+        .program-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .program-card {
+            position: relative;
+
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.07),
+                    rgba(255,255,255,0.025)
+                );
+
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 15px;
+
+            backdrop-filter: blur(12px);
+
+            transition: 0.4s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            border-color: #e50914;
+            box-shadow: 0 15px 40px rgba(229,9,20,0.12);
+        }
+
+        .program-number {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 50px;
+
+            color: rgba(229,9,20,0.15);
+        }
+
+        .program-icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: rgba(229,9,20,0.12);
+            border: 1px solid rgba(229,9,20,0.35);
+
+            color: #e50914;
+            font-size: 28px;
+
+            margin-bottom: 22px;
+        }
+
+        .program-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .program-card > p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .program-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            padding: 12px;
+
+            background: rgba(0,0,0,0.35);
+            border-radius: 7px;
+
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .info-box span {
+            display: block;
+            color: #777;
+            font-size: 11px;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+        }
+
+        .info-box strong {
+            font-size: 13px;
+        }
+
+        .program-list {
+            list-style: none;
+        }
+
+        .program-list li {
+            color: #bbb;
+            font-size: 13px;
+            margin-bottom: 9px;
+        }
+
+        .program-list i {
+            color: #e50914;
+            margin-right: 8px;
+        }
+
+
+        /* ================= PROGRAM DETAILS ================= */
+
+        .details {
+            background: #0d0d0d;
+        }
+
+        .details-container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .detail-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+
+            margin-bottom: 18px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+        .detail-title {
+            padding: 25px;
+
+            background: rgba(229,9,20,0.10);
+
+            display: flex;
+            align-items: center;
+
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .detail-title i {
+            color: #e50914;
+            margin-right: 12px;
+        }
+
+        .detail-content {
+            padding: 25px;
+
+            background: rgba(255,255,255,0.025);
+
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+
+        /* ================= WEEKLY PLAN ================= */
+
+        .weekly {
+            background: #080808;
+        }
+
+        .week-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .day-card {
+            min-height: 180px;
+
+            padding: 20px 12px;
+
+            text-align: center;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .day-card:hover {
+            border-color: #e50914;
+            transform: translateY(-5px);
+        }
+
+        .day-card h4 {
+            color: #e50914;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .day-card i {
+            font-size: 25px;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+
+        .day-card p {
+            color: #888;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+
+        /* ================= BENEFITS ================= */
+
+        .benefits {
+            background: #0d0d0d;
+        }
+
+        .benefit-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .benefit-card {
+            padding: 35px 25px;
+            text-align: center;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-7px);
+            border-color: #e50914;
+        }
+
+        .benefit-card i {
+            color: #e50914;
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            color: #888;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+
+        /* ================= NOTE ================= */
+
+        .note-section {
+            background: #080808;
+        }
+
+        .note-box {
+            max-width: 950px;
+            margin: auto;
+
+            padding: 30px;
+
+            border-left: 4px solid #e50914;
+
+            background: rgba(229,9,20,0.06);
+            border-radius: 8px;
+        }
+
+        .note-box h3 {
+            margin-bottom: 12px;
+        }
+
+        .note-box p {
+            color: #aaa;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            min-height: 420px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(229,9,20,0.75),
+                    rgba(0,0,0,0.88)
+                ),
+                url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .cta-content {
+            max-width: 750px;
+        }
+
+        .cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 70px;
+            letter-spacing: 2px;
+        }
+
+        .cta p {
+            color: #eee;
+            margin: 15px 0 30px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+
+            padding: 14px 30px;
+
+            background: #fff;
+            color: #111;
+
+            text-decoration: none;
+            font-weight: 700;
+
+            border-radius: 5px;
+
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #111;
+            color: #fff;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #050505;
+            padding: 60px 8% 25px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: #e50914;
+        }
+
+        .footer-column p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #e50914;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+
+            border: 1px solid #333;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+        }
+
+        .social-icons a:hover {
+            background: #e50914;
+            border-color: #e50914;
+        }
+
+        .copyright {
+            border-top: 1px solid #222;
+
+            text-align: center;
+
+            margin-top: 45px;
+            padding-top: 20px;
+
+            color: #666;
+            font-size: 13px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .week-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .benefit-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .nav-links {
+                gap: 8px;
+            }
+
+            .nav-links a {
+                font-size: 10px;
+            }
+
+            .join-btn {
+                display: none;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .hero-content h1 {
+                font-size: 70px;
+            }
+
+            .program-card {
+                padding: 25px;
+            }
+
+            .detail-row {
+                grid-template-columns: 1fr;
+            }
+
+            .week-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefit-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 50px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                MANISHA <span>FITNESS HUB</span>
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="home.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="services.html">Services</a>
+                </li>
+
+                <li>
+                    <a href="programs.html" class="active">Programs</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+                <li>
+                    <a href="membership.html" class="join-btn">
+                        Join Now
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="program-hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                TRAIN • IMPROVE • ACHIEVE
+            </div>
+
+            <h1>
+                FITNESS <span>PROGRAMS</span>
+            </h1>
+
+            <p>
+                Choose a structured fitness program that matches
+                your goals. MANISHA FITNESS HUB programs are designed to help
+                you build strength, improve endurance, develop
+                healthy habits and become more active.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROGRAM CARDS ================= -->
+
+    <section class="programs">
+
+        <div class="section-title">
+
+            <h2>
+                CHOOSE YOUR <span>PROGRAM</span>
+            </h2>
+
+            <p>
+                Different goals require different training approaches.
+            </p>
+
+        </div>
+
+
+        <div class="program-grid">
+
+
+            <!-- 01 -->
+
+            <div class="program-card">
+
+                <div class="program-number">01</div>
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+
+                <h3>Strength Training</h3>
+
+                <p>
+                    A structured resistance-training program focused
+                    on improving muscular strength, movement quality
+                    and overall physical performance.
+                </p>
+
+                <div class="program-info">
+
+                    <div class="info-box">
+                        <span>Level</span>
+                        <strong>Beginner - Advanced</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Duration</span>
+                        <strong>45 - 60 Min</strong>
+                    </div>
+
+                </div>
+
+                <ul class="program-list">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Compound exercises
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Resistance training
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Strength progression
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Proper exercise technique
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- 02 -->
+
+            <div class="program-card">
+
+                <div class="program-number">02</div>
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <h3>Cardio & Endurance</h3>
+
+                <p>
+                    Improve cardiovascular fitness and endurance
+                    through structured cardio sessions and
+                    movement-based workouts.
+                </p>
+
+                <div class="program-info">
+
+                    <div class="info-box">
+                        <span>Level</span>
+                        <strong>All Levels</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Duration</span>
+                        <strong>30 - 50 Min</strong>
+                    </div>
+
+                </div>
+
+                <ul class="program-list">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Treadmill workouts
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Cycling
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Endurance exercises
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Aerobic activities
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- 03 -->
+
+            <div class="program-card">
+
+                <div class="program-number">03</div>
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-person-running"></i>
+                </div>
+
+                <h3>Functional Fitness</h3>
+
+                <p>
+                    Improve mobility, balance, coordination and
+                    movement skills using exercises that support
+                    everyday physical activities.
+                </p>
+
+                <div class="program-info">
+
+                    <div class="info-box">
+                        <span>Level</span>
+                        <strong>Beginner - Intermediate</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Duration</span>
+                        <strong>40 - 50 Min</strong>
+                    </div>
+
+                </div>
+
+                <ul class="program-list">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Mobility exercises
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Balance training
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Coordination drills
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Core exercises
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- 04 -->
+
+            <div class="program-card">
+
+                <div class="program-number">04</div>
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-person"></i>
+                </div>
+
+                <h3>Beginner Fitness</h3>
+
+                <p>
+                    A simple introduction to gym training for people
+                    who are new to exercise. Focus on learning basic
+                    movements and building consistency.
+                </p>
+
+                <div class="program-info">
+
+                    <div class="info-box">
+                        <span>Level</span>
+                        <strong>Beginner</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Duration</span>
+                        <strong>30 - 45 Min</strong>
+                    </div>
+
+                </div>
+
+                <ul class="program-list">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Basic gym exercises
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Exercise technique
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Light resistance training
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Fitness habit building
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- 05 -->
+
+            <div class="program-card">
+
+                <div class="program-number">05</div>
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <h3>HIIT Training</h3>
+
+                <p>
+                    High-intensity interval sessions that alternate
+                    periods of challenging activity with recovery
+                    periods.
+                </p>
+
+                <div class="program-info">
+
+                    <div class="info-box">
+                        <span>Level</span>
+                        <strong>Intermediate</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Duration</span>
+                        <strong>25 - 40 Min</strong>
+                    </div>
+
+                </div>
+
+                <ul class="program-list">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Short workout intervals
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Full-body movements
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Recovery intervals
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Endurance development
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- 06 -->
+
+            <div class="program-card">
+
+                <div class="program-number">06</div>
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+
+                <h3>Personal Training</h3>
+
+                <p>
+                    One-to-one training sessions with professional
+                    guidance, exercise instruction and a structured
+                    approach to your personal fitness goals.
+                </p>
+
+                <div class="program-info">
+
+                    <div class="info-box">
+                        <span>Level</span>
+                        <strong>All Levels</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <span>Duration</span>
+                        <strong>45 - 60 Min</strong>
+                    </div>
+
+                </div>
+
+                <ul class="program-list">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Individual guidance
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Exercise technique
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Progress tracking
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Goal-based training
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROGRAM DETAILS ================= -->
+
+    <section class="details">
+
+        <div class="section-title">
+
+            <h2>
+                PROGRAM <span>DETAILS</span>
+            </h2>
+
+            <p>
+                Understand what a complete training program includes.
+            </p>
+
+        </div>
+
+
+        <div class="details-container">
+
+
+            <div class="detail-row">
+
+                <div class="detail-title">
+                    <i class="fa-solid fa-bullseye"></i>
+                    Goal Setting
+                </div>
+
+                <div class="detail-content">
+                    Before starting a program, identify your main
+                    fitness objective. This could include improving
+                    strength, endurance, mobility, general fitness
+                    or consistency. Clear goals make it easier to
+                    organize your training routine.
+                </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <div class="detail-title">
+                    <i class="fa-solid fa-person-running"></i>
+                    Warm-Up
+                </div>
+
+                <div class="detail-content">
+                    Each workout should begin with an appropriate
+                    warm-up. Light movement and mobility exercises
+                    can help prepare the body for the planned
+                    training session.
+                </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <div class="detail-title">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    Main Workout
+                </div>
+
+                <div class="detail-content">
+                    The main part of the session contains exercises
+                    selected according to the program. Training
+                    intensity and exercise difficulty can be adjusted
+                    according to experience and ability.
+                </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <div class="detail-title">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Progress Tracking
+                </div>
+
+                <div class="detail-content">
+                    Progress can be monitored by recording exercise
+                    performance, repetitions, duration, consistency
+                    and other relevant training indicators. Gradual
+                    progression helps maintain a structured routine.
+                </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <div class="detail-title">
+                    <i class="fa-solid fa-person-circle-check"></i>
+                    Recovery
+                </div>
+
+                <div class="detail-content">
+                    Recovery is an important part of fitness training.
+                    Rest days, adequate sleep, hydration and balanced
+                    nutrition support a consistent training routine.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WEEKLY PLAN ================= -->
+
+    <section class="weekly">
+
+        <div class="section-title">
+
+            <h2>
+                SAMPLE <span>WEEKLY PLAN</span>
+            </h2>
+
+            <p>
+                An example of how different training sessions can
+                be organized throughout a week.
+            </p>
+
+        </div>
+
+
+        <div class="week-grid">
+
+
+            <div class="day-card">
+
+                <h4>MON</h4>
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                <p>
+                    Upper Body<br>
+                    Strength
+                </p>
+
+            </div>
+
+
+            <div class="day-card">
+
+                <h4>TUE</h4>
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                <p>
+                    Cardio &<br>
+                    Endurance
+                </p>
+
+            </div>
+
+
+            <div class="day-card">
+
+                <h4>WED</h4>
+
+                <i class="fa-solid fa-person-walking"></i>
+
+                <p>
+                    Mobility &<br>
+                    Recovery
+                </p>
+
+            </div>
+
+
+            <div class="day-card">
+
+                <h4>THU</h4>
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                <p>
+                    Lower Body<br>
+                    Strength
+                </p>
+
+            </div>
+
+
+            <div class="day-card">
+
+                <h4>FRI</h4>
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <p>
+                    Full Body<br>
+                    Training
+                </p>
+
+            </div>
+
+
+            <div class="day-card">
+
+                <h4>SAT</h4>
+
+                <i class="fa-solid fa-person-running"></i>
+
+                <p>
+                    Functional<br>
+                    Fitness
+                </p>
+
+            </div>
+
+
+            <div class="day-card">
+
+                <h4>SUN</h4>
+
+                <i class="fa-solid fa-bed"></i>
+
+                <p>
+                    Rest &<br>
+                    Recovery
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BENEFITS ================= -->
+
+    <section class="benefits">
+
+        <div class="section-title">
+
+            <h2>
+                BENEFITS OF <span>TRAINING</span>
+            </h2>
+
+            <p>
+                Consistent physical activity can support many aspects
+                of health and fitness.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-grid">
+
+
+            <div class="benefit-card">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                <h3>Build Strength</h3>
+
+                <p>
+                    Resistance training can help develop muscular
+                    strength and improve physical performance.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                <h3>Improve Endurance</h3>
+
+                <p>
+                    Cardio and endurance activities can improve
+                    cardiovascular fitness and stamina.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <i class="fa-solid fa-person-running"></i>
+
+                <h3>Better Mobility</h3>
+
+                <p>
+                    Mobility and functional exercises can support
+                    movement, balance and coordination.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>More Energy</h3>
+
+                <p>
+                    Regular physical activity can contribute to
+                    overall fitness and an active lifestyle.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <h3>Track Progress</h3>
+
+                <p>
+                    Structured programs make it easier to monitor
+                    your training consistency and improvements.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3>Stay Motivated</h3>
+
+                <p>
+                    A supportive gym environment can help you stay
+                    consistent with your fitness routine.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NOTE ================= -->
+
+    <section class="note-section">
+
+        <div class="note-box">
+
+            <h3>
+                <i class="fa-solid fa-circle-info"></i>
+                Important
+            </h3>
+
+            <p>
+                Fitness programs should be adjusted according to
+                individual experience, ability and goals. Beginners
+                should start gradually and learn correct exercise
+                techniques. If you have a medical condition, injury,
+                or other health concern, consult an appropriate
+                healthcare professional before beginning a new
+                exercise program.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <div class="cta-content">
+
+            <h2>
+                FIND YOUR PROGRAM
+            </h2>
+
+            <p>
+                Start training with MANISHA FITNESS HUB and build a consistent
+                fitness routine that works for you.
+            </p>
+
+            <a href="membership.html" class="cta-btn">
+                JOIN MANISHA FITNESS HUB
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+
+            <div class="footer-column">
+
+                <div class="footer-logo">
+                    MANISHA <span>FITNESS HUB</span>
+                </div>
+
+                <p>
+                    MANISHA FITNESS HUB is a modern gym and fitness center
+                    dedicated to helping people build strength,
+                    confidence and a healthier lifestyle.
+                </p>
+
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="home.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+                    <li>
+                        <a href="services.html">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="programs.html">Programs</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Programs</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">Strength Training</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Cardio Training</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Functional Fitness</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Personal Training</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Your City, India
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    info@manishafitnesshub.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 MANISHA FITNESS HUB.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
+```

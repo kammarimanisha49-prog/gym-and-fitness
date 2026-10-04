@@ -1,0 +1,983 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MANISHA FITNESS HUB</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #080808;
+            color: white;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #e50914;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e50914;
+        }
+
+        .join-btn {
+            background: #e50914;
+            padding: 12px 22px;
+            border-radius: 5px;
+            color: white !important;
+            font-weight: 600 !important;
+        }
+
+        .join-btn:hover {
+            background: #ff202a;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(90deg,
+                rgba(0,0,0,0.92) 10%,
+                rgba(0,0,0,0.65) 50%,
+                rgba(0,0,0,0.35)),
+                url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=90");
+
+            background-size: cover;
+            background-position: center;
+            padding: 100px 8% 60px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-content h4 {
+            color: #e50914;
+            letter-spacing: 4px;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(65px, 9vw, 125px);
+            line-height: 0.9;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .hero-content h1 span {
+            color: #e50914;
+        }
+
+        .hero-content p {
+            color: #ddd;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            max-width: 550px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #e50914;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #ff1e29;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: black;
+        }
+
+        /* ================= COMMON ================= */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 55px;
+            letter-spacing: 2px;
+        }
+
+        .section-title span {
+            color: #e50914;
+        }
+
+        .section-title p {
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            background: #0d0d0d;
+        }
+
+        .feature-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            padding: 35px 25px;
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: 0.4s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #e50914;
+        }
+
+        .feature-card i {
+            font-size: 42px;
+            color: #e50914;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: #080808;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-img {
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 58px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 span {
+            color: #e50914;
+        }
+
+        .about-text p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .about-list li {
+            margin-bottom: 13px;
+            color: #ddd;
+        }
+
+        .about-list i {
+            color: #e50914;
+            margin-right: 10px;
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery {
+            background: #0d0d0d;
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+        }
+
+        .gallery-overlay h3 {
+            font-size: 20px;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(229,9,20,0.75), rgba(0,0,0,0.8)),
+                url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1800&q=85");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .cta-content {
+            max-width: 750px;
+        }
+
+        .cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 70px;
+            letter-spacing: 2px;
+        }
+
+        .cta p {
+            margin: 15px 0 30px;
+            color: #eee;
+        }
+
+        .cta .btn {
+            background: white;
+            color: #111;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #050505;
+            padding: 60px 8% 25px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: #e50914;
+        }
+
+        .footer-column p {
+            color: #888;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #999;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #e50914;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #333;
+            border-radius: 50%;
+            color: white;
+        }
+
+        .social-icons a:hover {
+            background: #e50914;
+            border-color: #e50914;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #222;
+            margin-top: 45px;
+            padding-top: 20px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .join-btn {
+                display: none;
+            }
+
+            .feature-grid,
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img {
+                height: 400px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                gap: 8px;
+            }
+
+            .nav-links a {
+                font-size: 10px;
+            }
+
+            .hero {
+                padding: 120px 6% 60px;
+                background-position: center;
+            }
+
+            .hero-content h1 {
+                font-size: 70px;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .section-title h2 {
+                font-size: 45px;
+            }
+
+            .feature-grid,
+            .gallery-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text h2 {
+                font-size: 48px;
+            }
+
+            .cta h2 {
+                font-size: 50px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+        <nav>
+
+            <div class="logo">
+                MANISHA <span>FITNESS HUB</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+                <li>
+                    <a href="membership.html" class="join-btn">
+                        Join Now
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h4>WELCOME TO MANISHA FITNESS HUB</h4>
+
+            <h1>
+                BUILD YOUR<br>
+                <span>BEST</span> VERSION
+            </h1>
+
+            <p>
+                Transform your body, strengthen your mind and
+                build a healthier lifestyle with professional
+                trainers, modern equipment and powerful workouts.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="membership.html" class="btn btn-primary">
+                    JOIN NOW
+                </a>
+
+                <a href="programs.html" class="btn btn-outline">
+                    EXPLORE PROGRAMS
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+
+        <div class="section-title">
+
+            <h2>WHY CHOOSE <span>MANISHA FITNESS HUB?</span></h2>
+
+            <p>
+                Everything you need to reach your fitness goals.
+            </p>
+
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                <h3>Modern Equipment</h3>
+
+                <p>
+                    Train with high-quality gym equipment
+                    designed for strength and performance.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                <h3>Expert Trainers</h3>
+
+                <p>
+                    Get guidance from experienced trainers
+                    who help you train safely and effectively.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                <h3>Fitness Programs</h3>
+
+                <p>
+                    Choose workout programs designed for
+                    strength, fitness and overall wellness.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about">
+
+        <div class="about-container">
+
+            <div class="about-img">
+
+                <img
+                    src="img1.jpg.jpeg"
+                    alt="Modern Gym">
+
+            </div>
+
+
+            <div class="about-text">
+
+                <h2>
+                    TRAIN HARD.<br>
+                    <span>STAY STRONG.</span>
+                </h2>
+
+                <p>
+                    MANISHA FITNESS HUB is a modern fitness
+                    destination built for people who want to become
+                    stronger, healthier and more confident.
+                </p>
+
+                <p>
+                    Our gym combines modern equipment, professional
+                    coaching and a motivating environment to help
+                    every member reach their fitness goals.
+                </p>
+
+                <ul class="about-list">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Professional Training
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Modern Gym Equipment
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Personalized Workout Programs
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Friendly Fitness Community
+                    </li>
+
+                </ul>
+
+                <a href="about.html" class="btn btn-primary">
+                    DISCOVER MORE
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section class="gallery">
+
+        <div class="section-title">
+
+            <h2>OUR <span>GYM</span></h2>
+
+            <p>
+                Train in a powerful and motivating environment.
+            </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=85"
+                    alt="Gym Workout">
+
+                <div class="gallery-overlay">
+                    <h3>Strength Training</h3>
+                </div>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85"
+                    alt="Gym Equipment">
+
+                <div class="gallery-overlay">
+                    <h3>Modern Equipment</h3>
+                </div>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85"
+                    alt="Fitness Training">
+
+                <div class="gallery-overlay">
+                    <h3>Fitness Training</h3>
+                </div>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=85"
+                    alt="Weight Training">
+
+                <div class="gallery-overlay">
+                    <h3>Weight Training</h3>
+                </div>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85"
+                    alt="Gym Interior">
+
+                <div class="gallery-overlay">
+                    <h3>Premium Gym</h3>
+                </div>
+
+            </div>
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=900&q=85"
+                    alt="Fitness Workout">
+
+                <div class="gallery-overlay">
+                    <h3>Power Workout</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <div class="cta-content">
+
+            <h2>READY TO GET STRONGER?</h2>
+
+            <p>
+                Start your fitness journey today and become
+                the strongest version of yourself.
+            </p>
+
+            <a href="membership.html" class="btn">
+                START YOUR JOURNEY
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+
+                <div class="footer-logo">
+                    MANISHA <span>FITNESS HUB</span>
+                </div>
+
+                <p>
+                    A modern gym and fitness center dedicated
+                    to helping you build strength, confidence
+                    and a healthier lifestyle.
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Programs</h3>
+
+                <ul>
+                    <li><a href="programs.html">Strength Training</a></li>
+                    <li><a href="programs.html">Cardio Training</a></li>
+                    <li><a href="programs.html">Functional Fitness</a></li>
+                    <li><a href="programs.html">Personal Training</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Your City, India
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    info@manishafitnesshub.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 MANISHA FITNESS HUB.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
+```

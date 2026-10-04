@@ -1,0 +1,1392 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MANISHA FITNESS HUB</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #080808;
+            color: white;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        nav {
+            max-width: 1200px;
+            height: 75px;
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #e50914;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #e50914;
+        }
+
+        .join-btn {
+            background: #e50914;
+            padding: 11px 20px;
+            border-radius: 5px;
+            color: white !important;
+        }
+
+        .join-btn:hover {
+            background: #ff202a;
+        }
+
+        /* ================= HERO ================= */
+
+        .services-hero {
+            min-height: 75vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.65),
+                    rgba(0,0,0,0.85)
+                ),
+                url("https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=2000&q=90");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            padding: 20px;
+        }
+
+        .hero-content p {
+            color: #e50914;
+            font-weight: 600;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(70px, 10vw, 120px);
+            line-height: 0.9;
+            letter-spacing: 3px;
+        }
+
+        .hero-content h1 span {
+            color: #e50914;
+        }
+
+        .hero-content small {
+            display: block;
+            color: #bbb;
+            max-width: 650px;
+            margin: 25px auto 0;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        /* ================= COMMON ================= */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 55px;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 span {
+            color: #e50914;
+        }
+
+        .section-title p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            background: #080808;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            position: relative;
+            min-height: 410px;
+            overflow: hidden;
+            border-radius: 14px;
+
+            background: #111;
+            border: 1px solid rgba(255,255,255,0.1);
+
+            transition: 0.4s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #e50914;
+        }
+
+        .service-image {
+            height: 230px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.08);
+        }
+
+        .service-content {
+            padding: 25px;
+            background:
+                linear-gradient(
+                    rgba(20,20,20,0.95),
+                    rgba(10,10,10,1)
+                );
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #e50914;
+            color: white;
+
+            border-radius: 8px;
+
+            font-size: 22px;
+
+            margin-top: -50px;
+            margin-bottom: 18px;
+
+            position: relative;
+        }
+
+        .service-content h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .service-link {
+            display: inline-block;
+            margin-top: 18px;
+
+            color: #e50914;
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .service-link i {
+            margin-left: 5px;
+            transition: 0.3s;
+        }
+
+        .service-link:hover i {
+            margin-left: 10px;
+        }
+
+        /* ================= TRAINING SECTION ================= */
+
+        .training {
+            background: #0d0d0d;
+        }
+
+        .training-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .training-image {
+            height: 500px;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .training-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .training-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .training-content h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 60px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .training-content h2 span {
+            color: #e50914;
+        }
+
+        .training-content > p {
+            color: #999;
+            line-height: 1.8;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .training-list {
+            list-style: none;
+        }
+
+        .training-list li {
+            padding: 14px 0;
+            border-bottom: 1px solid #222;
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: #ddd;
+            font-size: 14px;
+        }
+
+        .training-list i {
+            color: #e50914;
+        }
+
+        /* ================= FACILITIES ================= */
+
+        .facilities {
+            background: #080808;
+        }
+
+        .facility-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .facility {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .facility img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .facility:hover img {
+            transform: scale(1.1);
+        }
+
+        .facility-overlay {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+
+            padding: 35px 20px 20px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,0.9)
+                );
+        }
+
+        .facility-overlay h3 {
+            font-size: 17px;
+        }
+
+        .facility-overlay p {
+            color: #aaa;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        /* ================= BENEFITS ================= */
+
+        .benefits {
+            background: #0d0d0d;
+        }
+
+        .benefit-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 35px 25px;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            border-color: #e50914;
+        }
+
+        .benefit-card i {
+            font-size: 38px;
+            color: #e50914;
+            margin-bottom: 18px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            color: #888;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            min-height: 430px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(229,9,20,0.75),
+                    rgba(0,0,0,0.85)
+                ),
+                url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .cta-content {
+            max-width: 750px;
+        }
+
+        .cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 70px;
+            letter-spacing: 2px;
+        }
+
+        .cta p {
+            color: #eee;
+            margin: 15px 0 30px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+
+            background: white;
+            color: #111;
+
+            padding: 14px 30px;
+
+            text-decoration: none;
+            font-weight: 700;
+
+            border-radius: 5px;
+
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #111;
+            color: white;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #050505;
+            padding: 60px 8% 25px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: #e50914;
+        }
+
+        .footer-column p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #e50914;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+
+            border: 1px solid #333;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+        }
+
+        .social-icons a:hover {
+            background: #e50914;
+            border-color: #e50914;
+        }
+
+        .copyright {
+            border-top: 1px solid #222;
+
+            text-align: center;
+
+            margin-top: 45px;
+            padding-top: 20px;
+
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .facility-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .training-container {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .nav-links {
+                gap: 8px;
+            }
+
+            .nav-links a {
+                font-size: 10px;
+            }
+
+            .join-btn {
+                display: none;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .services-grid,
+            .facility-grid,
+            .benefit-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 70px;
+            }
+
+            .training-image {
+                height: 380px;
+            }
+
+            .training-content h2 {
+                font-size: 48px;
+            }
+
+            .cta h2 {
+                font-size: 50px;
+            }
+
+            .facility {
+                height: 280px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                MANISHA <span>FITNESS HUB</span>
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="home.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="services.html" class="active">Services</a>
+                </li>
+
+                <li>
+                    <a href="program.html">Programs</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+                <li>
+                    <a href="membership.html" class="join-btn">
+                        Join Now
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="services-hero">
+
+        <div class="hero-content">
+
+            <p>WHAT WE OFFER</p>
+
+            <h1>
+                OUR <span>SERVICES</span>
+            </h1>
+
+            <small>
+                Professional fitness services, modern facilities
+                and expert guidance designed to help you reach
+                your fitness goals.
+            </small>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section class="services">
+
+        <div class="section-title">
+
+            <h2>
+                FITNESS <span>SERVICES</span>
+            </h2>
+
+            <p>
+                Everything you need for a complete fitness experience.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <!-- Service 1 -->
+
+            <div class="service-card">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1000&q=85"
+                        alt="Personal Training">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+
+                    <h3>Personal Training</h3>
+
+                    <p>
+                        Get one-to-one guidance from experienced
+                        trainers with workouts designed around
+                        your fitness goals.
+                    </p>
+
+                    <a href="contact.html" class="service-link">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Service 2 -->
+
+            <div class="service-card">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85"
+                        alt="Strength Training">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+
+                    <h3>Strength Training</h3>
+
+                    <p>
+                        Build strength and improve your performance
+                        with structured resistance and weight
+                        training workouts.
+                    </p>
+
+                    <a href="program.html" class="service-link">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Service 3 -->
+
+            <div class="service-card">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1000&q=85"
+                        alt="Cardio Training">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+
+                    <h3>Cardio Training</h3>
+
+                    <p>
+                        Improve endurance and cardiovascular fitness
+                        with effective cardio-focused workouts.
+                    </p>
+
+                    <a href="program.html" class="service-link">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Service 4 -->
+
+            <div class="service-card">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1000&q=85"
+                        alt="Functional Training">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-person-running"></i>
+                    </div>
+
+                    <h3>Functional Training</h3>
+
+                    <p>
+                        Improve mobility, balance, coordination and
+                        everyday movement through functional workouts.
+                    </p>
+
+                    <a href="program.html" class="service-link">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Service 5 -->
+
+            <div class="service-card">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1000&q=85"
+                        alt="Weight Training">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-weight-hanging"></i>
+                    </div>
+
+                    <h3>Weight Training</h3>
+
+                    <p>
+                        Train with a wide range of free weights and
+                        machines for progressive strength development.
+                    </p>
+
+                    <a href="program.html" class="service-link">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Service 6 -->
+
+            <div class="service-card">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=85"
+                        alt="Fitness Consultation">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+
+                    <h3>Fitness Consultation</h3>
+
+                    <p>
+                        Understand your fitness goals and create
+                        a structured workout plan with professional
+                        guidance.
+                    </p>
+
+                    <a href="contact.html" class="service-link">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PERSONAL TRAINING ================= -->
+
+    <section class="training">
+
+        <div class="training-container">
+
+            <div class="training-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=90"
+                    alt="Professional Personal Training">
+
+            </div>
+
+
+            <div class="training-content">
+
+                <h2>
+                    TRAIN WITH<br>
+                    <span>EXPERTS</span>
+                </h2>
+
+                <p>
+                    Our professional trainers help you understand
+                    proper exercise techniques and build a consistent
+                    training routine suited to your goals.
+                </p>
+
+
+                <ul class="training-list">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Personalized workout guidance
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Exercise technique guidance
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Workout progression tracking
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Fitness goal planning
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Motivating training environment
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FACILITIES ================= -->
+
+    <section class="facilities">
+
+        <div class="section-title">
+
+            <h2>
+                OUR <span>FACILITIES</span>
+            </h2>
+
+            <p>
+                Designed to make every workout better.
+            </p>
+
+        </div>
+
+
+        <div class="facility-grid">
+
+
+            <div class="facility">
+
+                <img
+                    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85"
+                    alt="Gym Equipment">
+
+                <div class="facility-overlay">
+
+                    <h3>Modern Equipment</h3>
+
+                    <p>
+                        Quality training equipment
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="facility">
+
+                <img
+                    src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85"
+                    alt="Gym Floor">
+
+                <div class="facility-overlay">
+
+                    <h3>Spacious Gym Floor</h3>
+
+                    <p>
+                        Comfortable workout space
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="facility">
+
+                <img
+                    src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85"
+                    alt="Cardio Area">
+
+                <div class="facility-overlay">
+
+                    <h3>Cardio Zone</h3>
+
+                    <p>
+                        Dedicated cardio equipment
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="facility">
+
+                <img
+                    src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=85"
+                    alt="Weight Training">
+
+                <div class="facility-overlay">
+
+                    <h3>Weight Zone</h3>
+
+                    <p>
+                        Strength training area
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BENEFITS ================= -->
+
+    <section class="benefits">
+
+        <div class="section-title">
+
+            <h2>
+                WHY OUR <span>SERVICES?</span>
+            </h2>
+
+            <p>
+                A better approach to your fitness journey.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-grid">
+
+
+            <div class="benefit-card">
+
+                <i class="fa-solid fa-user-check"></i>
+
+                <h3>Expert Guidance</h3>
+
+                <p>
+                    Learn proper exercise techniques with
+                    professional trainer support.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <h3>Progress Focused</h3>
+
+                <p>
+                    Build consistency and track your improvement
+                    throughout your fitness journey.
+                </p>
+
+            </div>
+
+
+            <div class="benefit-card">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <h3>Flexible Training</h3>
+
+                <p>
+                    Choose training options that fit your
+                    schedule and fitness routine.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <div class="cta-content">
+
+            <h2>
+                READY TO START?
+            </h2>
+
+            <p>
+                Choose your fitness goal and start training
+                at MANISHA FITNESS HUB today.
+            </p>
+
+            <a href="membership.html" class="cta-btn">
+                JOIN MANISHA FITNESS HUB
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+
+            <div class="footer-column">
+
+                <div class="footer-logo">
+                    MANISHA <span>FITNESS HUB</span>
+                </div>
+
+                <p>
+                    MANISHA FITNESS HUB is a modern gym and fitness center
+                    dedicated to helping people build strength,
+                    confidence and a healthier lifestyle.
+                </p>
+
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="home.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+                    <li>
+                        <a href="services.html">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="program.html">Programs</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Services</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">Personal Training</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Strength Training</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Cardio Training</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Functional Training</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Your City, India
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    info@manishafitnesshub.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 MANISHA FITNESS HUB.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
+```

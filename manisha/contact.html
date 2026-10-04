@@ -1,0 +1,1861 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MANISHA FITNESS HUB</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #080808;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        nav {
+            max-width: 1200px;
+            height: 75px;
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #e50914;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #e50914;
+        }
+
+        .join-btn {
+            background: #e50914;
+            color: white !important;
+            padding: 11px 20px;
+            border-radius: 5px;
+        }
+
+        .join-btn:hover {
+            background: #ff202a;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .contact-hero {
+            min-height: 62vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.80),
+                    rgba(0,0,0,0.92)
+                ),
+                url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-small {
+            color: #e50914;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(70px, 10vw, 115px);
+            line-height: 0.9;
+            letter-spacing: 3px;
+        }
+
+        .hero-content h1 span {
+            color: #e50914;
+        }
+
+        .hero-content p {
+            color: #aaa;
+            max-width: 650px;
+            margin: 25px auto 0;
+            font-size: 15px;
+        }
+
+        /* =========================
+           COMMON
+        ========================= */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 55px;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 span {
+            color: #e50914;
+        }
+
+        .section-title p {
+            color: #888;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* =========================
+           CONTACT INFORMATION
+        ========================= */
+
+        .contact-info {
+            background: #080808;
+        }
+
+        .info-grid {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            padding: 30px 20px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.06),
+                    rgba(255,255,255,0.02)
+                );
+
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-7px);
+            border-color: #e50914;
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+
+            margin: auto auto 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(229,9,20,0.12);
+            color: #e50914;
+
+            font-size: 24px;
+        }
+
+        .info-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: #888;
+            font-size: 13px;
+        }
+
+        .info-card a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .info-card a:hover {
+            color: #e50914;
+        }
+
+        /* =========================
+           CONTACT FORM
+        ========================= */
+
+        .contact-section {
+            background: #0d0d0d;
+        }
+
+        .contact-container {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 45px;
+            align-items: start;
+        }
+
+        .contact-text h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 60px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .contact-text h2 span {
+            color: #e50914;
+        }
+
+        .contact-text > p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        .contact-points {
+            list-style: none;
+        }
+
+        .contact-points li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+
+            margin-bottom: 22px;
+
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .contact-points i {
+            color: #e50914;
+            font-size: 18px;
+            width: 20px;
+            margin-top: 3px;
+        }
+
+        .form-box {
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.07),
+                    rgba(255,255,255,0.025)
+                );
+
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 15px;
+
+            backdrop-filter: blur(12px);
+        }
+
+        .form-box h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .form-box > p {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #aaa;
+            font-size: 12px;
+            margin-bottom: 7px;
+        }
+
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            background: #101010;
+            color: #ffffff;
+
+            border: 1px solid #292929;
+            border-radius: 6px;
+
+            outline: none;
+
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+            border-color: #e50914;
+        }
+
+        .input-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+            border-radius: 6px;
+
+            background: #e50914;
+            color: #ffffff;
+
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #ff202a;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           OPENING HOURS
+        ========================= */
+
+        .hours-section {
+            background: #080808;
+        }
+
+        .hours-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .hours-box {
+            padding: 35px;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+        }
+
+        .hours-box h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .hours-box h3 i {
+            color: #e50914;
+            margin-right: 10px;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 13px 0;
+
+            border-bottom: 1px solid #222;
+
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hours-list span:last-child {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .special-note {
+            color: #e50914;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        /* =========================
+           LOCATION
+        ========================= */
+
+        .location-section {
+            background: #0d0d0d;
+        }
+
+        .location-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .location-box {
+            padding: 35px;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+        }
+
+        .location-box h3 {
+            font-size: 22px;
+            margin-bottom: 18px;
+        }
+
+        .location-box h3 i {
+            color: #e50914;
+            margin-right: 10px;
+        }
+
+        .location-box p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .direction-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .direction-list li {
+            margin-bottom: 12px;
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .direction-list i {
+            color: #e50914;
+            margin-right: 8px;
+        }
+
+        .map-box {
+            min-height: 330px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(229,9,20,0.08),
+                    rgba(229,9,20,0.02)
+                );
+
+            border: 1px solid rgba(229,9,20,0.20);
+            border-radius: 12px;
+        }
+
+        .map-content i {
+            font-size: 50px;
+            color: #e50914;
+            margin-bottom: 15px;
+        }
+
+        .map-content h3 {
+            margin-bottom: 8px;
+        }
+
+        .map-content p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* =========================
+           FAQ
+        ========================= */
+
+        .faq-section {
+            background: #080808;
+        }
+
+        .faq-container {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .faq-item {
+            margin-bottom: 12px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            background: rgba(255,255,255,0.03);
+        }
+
+        .faq-question {
+            padding: 20px 22px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            color: #e50914;
+        }
+
+        .faq-answer {
+            padding: 0 22px 20px;
+
+            color: #888;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           SOCIAL
+        ========================= */
+
+        .social-section {
+            background: #0d0d0d;
+            text-align: center;
+        }
+
+        .social-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 50px;
+        }
+
+        .social-section h2 span {
+            color: #e50914;
+        }
+
+        .social-section p {
+            color: #888;
+            margin: 10px auto 25px;
+            font-size: 14px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .social-icons a {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #ffffff;
+            text-decoration: none;
+
+            border: 1px solid #333;
+            border-radius: 50%;
+
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #e50914;
+            border-color: #e50914;
+            transform: translateY(-5px);
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            padding: 80px 8%;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e50914,
+                    #850006
+                );
+        }
+
+        .cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 65px;
+            letter-spacing: 2px;
+        }
+
+        .cta p {
+            color: #eee;
+            max-width: 650px;
+            margin: 10px auto 25px;
+            font-size: 14px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+
+            padding: 13px 28px;
+
+            background: #ffffff;
+            color: #111;
+
+            border-radius: 5px;
+
+            text-decoration: none;
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #111;
+            color: #fff;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #050505;
+            padding: 60px 8% 25px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: #e50914;
+        }
+
+        .footer-column p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 18px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 9px;
+        }
+
+        .footer-column a {
+            color: #777;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #e50914;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #333;
+            border-radius: 50%;
+
+            color: #fff;
+        }
+
+        .footer-social a:hover {
+            background: #e50914;
+            border-color: #e50914;
+        }
+
+        .copyright {
+            border-top: 1px solid #222;
+
+            margin-top: 45px;
+            padding-top: 20px;
+
+            text-align: center;
+
+            color: #555;
+            font-size: 12px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hours-container,
+            .location-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .nav-links {
+                gap: 8px;
+            }
+
+            .nav-links a {
+                font-size: 10px;
+            }
+
+            .join-btn {
+                display: none;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-box,
+            .hours-box,
+            .location-box {
+                padding: 25px;
+            }
+
+            .contact-text h2 {
+                font-size: 48px;
+            }
+
+            .cta h2 {
+                font-size: 50px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                MANISHA <span>FITNESS HUB</span>
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="home.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="services.html">Services</a>
+                </li>
+
+                <li>
+                    <a href="programs.html">Programs</a>
+                </li>
+
+                <li>
+                    <a href="contact.html" class="active">Contact</a>
+                </li>
+
+                <li>
+                    <a href="membership.html" class="join-btn">
+                        Join Now
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="contact-hero">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                WE ARE HERE FOR YOU
+            </div>
+
+            <h1>
+                CONTACT <span>US</span>
+            </h1>
+
+            <p>
+                Have questions about our gym, programs, services or
+                memberships? Contact the MANISHA FITNESS HUB team and we will
+                help you find the information you need.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT INFORMATION ================= -->
+
+    <section class="contact-info">
+
+        <div class="section-title">
+
+            <h2>
+                GET IN <span>TOUCH</span>
+            </h2>
+
+            <p>
+                Reach MANISHA FITNESS HUB through any of the options below.
+            </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+            <!-- Address -->
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <h3>Our Location</h3>
+
+                <p>
+                    Main Road,<br>
+                    Your City, India
+                </p>
+
+            </div>
+
+
+            <!-- Phone -->
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <h3>Call Us</h3>
+
+                <a href="tel:+919876543210">
+                    +91 98765 43210
+                </a>
+
+                <p>
+                    Mon - Sat
+                </p>
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <h3>Email Us</h3>
+
+                <a href="mailto:info@manishafitnesshub.com">
+                    info@manishafitnesshub.com
+                </a>
+
+                <p>
+                    We reply as soon as possible.
+                </p>
+
+            </div>
+
+
+            <!-- Hours -->
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <h3>Opening Hours</h3>
+
+                <p>
+                    Mon - Sat<br>
+                    5:00 AM - 10:00 PM
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT FORM ================= -->
+
+    <section class="contact-section">
+
+        <div class="contact-container">
+
+
+            <!-- LEFT CONTENT -->
+
+            <div class="contact-text">
+
+                <h2>
+                    LET'S START<br>
+                    <span>YOUR JOURNEY</span>
+                </h2>
+
+                <p>
+                    Whether you are completely new to the gym or
+                    already have fitness experience, our team can
+                    help you understand our programs, services and
+                    membership options.
+                </p>
+
+
+                <ul class="contact-points">
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <span>
+                            Ask about available membership plans
+                            and facilities.
+                        </span>
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <span>
+                            Learn more about personal training and
+                            fitness programs.
+                        </span>
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <span>
+                            Get information about gym timings and
+                            available services.
+                        </span>
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <span>
+                            Send us your questions through the
+                            enquiry form.
+                        </span>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <div class="form-box">
+
+                <h3>Send an Enquiry</h3>
+
+                <p>
+                    Fill in the details below and our team can
+                    get back to you.
+                </p>
+
+
+                <form>
+
+
+                    <div class="form-row">
+
+                        <div class="input-group">
+
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your name"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter phone number"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="input-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="subject">
+                                Subject
+                            </label>
+
+                            <select id="subject">
+
+                                <option value="">
+                                    Select an option
+                                </option>
+
+                                <option>
+                                    Membership
+                                </option>
+
+                                <option>
+                                    Personal Training
+                                </option>
+
+                                <option>
+                                    Fitness Programs
+                                </option>
+
+                                <option>
+                                    Gym Facilities
+                                </option>
+
+                                <option>
+                                    General Enquiry
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="message">
+                            Your Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Write your message here..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+                        SEND MESSAGE
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= OPENING HOURS ================= -->
+
+    <section class="hours-section">
+
+        <div class="section-title">
+
+            <h2>
+                GYM <span>TIMINGS</span>
+            </h2>
+
+            <p>
+                Plan your workout around our regular operating hours.
+            </p>
+
+        </div>
+
+
+        <div class="hours-container">
+
+
+            <div class="hours-box">
+
+                <h3>
+                    <i class="fa-solid fa-clock"></i>
+                    Regular Hours
+                </h3>
+
+                <ul class="hours-list">
+
+                    <li>
+                        <span>Monday</span>
+                        <span>5:00 AM - 10:00 PM</span>
+                    </li>
+
+                    <li>
+                        <span>Tuesday</span>
+                        <span>5:00 AM - 10:00 PM</span>
+                    </li>
+
+                    <li>
+                        <span>Wednesday</span>
+                        <span>5:00 AM - 10:00 PM</span>
+                    </li>
+
+                    <li>
+                        <span>Thursday</span>
+                        <span>5:00 AM - 10:00 PM</span>
+                    </li>
+
+                    <li>
+                        <span>Friday</span>
+                        <span>5:00 AM - 10:00 PM</span>
+                    </li>
+
+                    <li>
+                        <span>Saturday</span>
+                        <span>6:00 AM - 9:00 PM</span>
+                    </li>
+
+                    <li>
+                        <span>Sunday</span>
+                        <span>6:00 AM - 1:00 PM</span>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="hours-box">
+
+                <h3>
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Training Sessions
+                </h3>
+
+                <ul class="hours-list">
+
+                    <li>
+                        <span>Personal Training</span>
+                        <span>By Appointment</span>
+                    </li>
+
+                    <li>
+                        <span>Group Training</span>
+                        <span>Scheduled</span>
+                    </li>
+
+                    <li>
+                        <span>Fitness Consultation</span>
+                        <span>By Appointment</span>
+                    </li>
+
+                    <li>
+                        <span>New Member Orientation</span>
+                        <span>Scheduled</span>
+                    </li>
+
+                </ul>
+
+                <p class="special-note">
+                    * Timings may change during holidays or special events.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LOCATION ================= -->
+
+    <section class="location-section">
+
+        <div class="section-title">
+
+            <h2>
+                FIND <span>MANISHA FITNESS HUB</span>
+            </h2>
+
+            <p>
+                Visit our gym and experience the MANISHA FITNESS HUB environment.
+            </p>
+
+        </div>
+
+
+        <div class="location-container">
+
+
+            <div class="location-box">
+
+                <h3>
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Gym Address
+                </h3>
+
+                <p>
+                    MANISHA FITNESS HUB<br>
+                    Main Road, Near City Center<br>
+                    Your City, Andhra Pradesh<br>
+                    India
+                </p>
+
+
+                <ul class="direction-list">
+
+                    <li>
+                        <i class="fa-solid fa-location-arrow"></i>
+                        Easy access from the main road
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-square-parking"></i>
+                        Parking facilities available
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-bus"></i>
+                        Accessible by public transport
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-building"></i>
+                        Located near major local facilities
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="map-box">
+
+                <div class="map-content">
+
+                    <i class="fa-solid fa-map-location-dot"></i>
+
+                    <h3>
+                        MANISHA FITNESS HUB Location
+                    </h3>
+
+                    <p>
+                        Your City, Andhra Pradesh, India
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FAQ ================= -->
+
+    <section class="faq-section">
+
+        <div class="section-title">
+
+            <h2>
+                FREQUENTLY ASKED <span>QUESTIONS</span>
+            </h2>
+
+            <p>
+                Quick answers to common MANISHA FITNESS HUB enquiries.
+            </p>
+
+        </div>
+
+
+        <div class="faq-container">
+
+
+            <div class="faq-item">
+
+                <div class="faq-question">
+
+                    <span>
+                        Do I need previous gym experience?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    No. MANISHA FITNESS HUB offers beginner-friendly programs.
+                    New members can learn basic exercises and
+                    proper gym techniques before progressing to
+                    more challenging workouts.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <div class="faq-question">
+
+                    <span>
+                        Can I get personal training?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    Yes. Personal training sessions are available
+                    by appointment. A trainer can guide you through
+                    exercises and help structure your training
+                    routine according to your goals.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <div class="faq-question">
+
+                    <span>
+                        What programs are available?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    MANISHA FITNESS HUB provides programs such as strength
+                    training, cardio and endurance, functional
+                    fitness, beginner fitness, HIIT and personal
+                    training.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <div class="faq-question">
+
+                    <span>
+                        How can I enquire about membership?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    You can contact MANISHA FITNESS HUB by phone, email or
+                    through the enquiry form on this page.
+                    Select "Membership" in the subject field
+                    and send your requirements.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <div class="faq-question">
+
+                    <span>
+                        Can I visit the gym before joining?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </div>
+
+                <div class="faq-answer">
+
+                    Yes. Contact the MANISHA FITNESS HUB team to ask about
+                    visiting the facility, available timings and
+                    membership information before making your
+                    decision.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SOCIAL MEDIA ================= -->
+
+    <section class="social-section">
+
+        <h2>
+            FOLLOW <span>MANISHA FITNESS HUB</span>
+        </h2>
+
+        <p>
+            Stay connected with MANISHA FITNESS HUB for fitness updates,
+            announcements and gym information.
+        </p>
+
+
+        <div class="social-icons">
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <h2>
+            READY TO GET STARTED?
+        </h2>
+
+        <p>
+            Contact MANISHA FITNESS HUB today and learn more about our
+            membership plans, programs and fitness services.
+        </p>
+
+        <a href="membership.html" class="cta-btn">
+            JOIN MANISHA FITNESS HUB
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+
+            <div class="footer-column">
+
+                <div class="footer-logo">
+                    MANISHA <span>FITNESS HUB</span>
+                </div>
+
+                <p>
+                    MANISHA FITNESS HUB is a modern gym and fitness center
+                    focused on creating a professional, motivating
+                    and welcoming fitness environment.
+                </p>
+
+
+                <div class="footer-social">
+
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="home.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+                    <li>
+                        <a href="services.html">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="programs.html">Programs</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    info@manishafitnesshub.com
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Your City, India
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Gym Hours</h3>
+
+                <p>
+                    Monday - Friday<br>
+                    5:00 AM - 10:00 PM
+                </p>
+
+                <p>
+                    Saturday<br>
+                    6:00 AM - 9:00 PM
+                </p>
+
+                <p>
+                    Sunday<br>
+                    6:00 AM - 1:00 PM
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 MANISHA FITNESS HUB.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= FORM SCRIPT ================= -->
+
+    <script>
+
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Thank you for contacting MANISHA FITNESS HUB! " +
+                "Your enquiry has been received."
+            );
+
+            form.reset();
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
+```
